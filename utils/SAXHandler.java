@@ -1,21 +1,17 @@
 package utils;
-
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 import src.Deposit;
 import java.util.ArrayList;
 import java.util.List;
-
 public class SAXHandler extends DefaultHandler {
-
     private Deposit deposit;
     private List<Deposit> deposits = new ArrayList<>();
     private StringBuilder currentVal = new StringBuilder();
     public List<Deposit> getDeposits() {
         return deposits;
     }
-
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         if (qName.equals(Strings.DEPOSIT)) {
@@ -25,12 +21,10 @@ public class SAXHandler extends DefaultHandler {
         }
         currentVal = new StringBuilder();
     }
-
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         currentVal.append(new String(ch, start, length));
     }
-
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
         switch (qName) {

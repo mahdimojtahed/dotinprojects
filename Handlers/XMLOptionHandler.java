@@ -17,8 +17,6 @@ public class XMLOptionHandler {
         System.out.println(Strings.ENTER_PATH);
         System.out.println(Strings.FILE_FORMAT);
         FILEPATH = "files/" + input.nextLine();
-
-
         XMLParser parser = new XMLParser();
         List<Deposit> Deposits = parser.initDeposits(FILEPATH);
         for (Deposit deposit : Deposits) {

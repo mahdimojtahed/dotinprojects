@@ -1,23 +1,22 @@
 package Handlers;
-
 import utils.Calculator;
 import utils.Strings;
-
 import java.util.Scanner;
 
 public class DirectOptionHandler {
     static Scanner input = new Scanner(System.in);
     static double res;
-    static int roi;
+    static int rateOfInterest;
+    static int depositBalance;
+    static int durationInDays;
     public static void DirectEnterHandler() throws ArithmeticException {
         System.out.println(Strings.ENTER_ROI);
-        roi = input.nextInt();
+        rateOfInterest = input.nextInt();
         System.out.println(Strings.ENTER_DB);
-        int db = input.nextInt();
+        depositBalance = input.nextInt();
         System.out.println(Strings.ENTER_DURATION);
-        int dd = input.nextInt();
-        res = Calculator.calculate(roi, db, dd);
-
+        durationInDays = input.nextInt();
+        res = Calculator.calculate(rateOfInterest, depositBalance, durationInDays);
         System.out.println("Pi would be : " + res);
     }
 }
