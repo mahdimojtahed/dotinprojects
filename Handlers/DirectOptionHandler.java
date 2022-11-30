@@ -14,6 +14,7 @@ public class DirectOptionHandler {
         rateOfInterest = input.nextInt();
         System.out.println(Strings.ENTER_DB);
         depositBalance = input.nextInt();
+        // todo int is not enough
         System.out.println(Strings.ENTER_DURATION);
         durationInDays = input.nextInt();
         res = Calculator.calculate(rateOfInterest, depositBalance, durationInDays);

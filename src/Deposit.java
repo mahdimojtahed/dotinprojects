@@ -1,12 +1,15 @@
 package src;
 
 public class Deposit {
+    // todo try to make Deposit abstract, because we can not have deposit. We should have one of the other three Classes.
     private int depositID;
     private int customerNumber;
     private String depositType;
     private double depositBalance;
+    // todo use BigDecimal or BigInteger
     private int durationInDays;
     private int rateOfInterest;
+    // todo add a field to store payedInterest in Object
     public Deposit() {
     }
     public Deposit(int depositID, int customerNumber, String depositType, double depositBalance, int durationInDays) {

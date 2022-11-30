@@ -21,6 +21,7 @@ public class XMLParser {
             SAXHandler handler = new SAXHandler();
             SAXParser saxParser = spf.newSAXParser();
             saxParser.parse(FILEPATH,handler);
+            // todo fix handler for tags without id
 
             List<Deposit> depositList = handler.getDeposits();
 
@@ -51,6 +52,10 @@ public class XMLParser {
                         deposits.add(loanDeposit);
                         break;
                 }
+                // todo fix Exception Handling for wrong inputs (char instead of digits)
+                // todo fix Exception Handling for wrong depositType (not ignore it)
+                // todo fix Exception Handling for negative deposit
+                // todo fix Exception Handling for zero or negative duration
             }
 
         } catch (ParserConfigurationException | IOException | SAXException e) {

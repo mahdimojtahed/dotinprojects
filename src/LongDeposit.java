@@ -6,6 +6,8 @@ public class LongDeposit extends Deposit{
         super(depositID, customerNumber, depositType, depositBalance, durationInDays);
         this.rateOfInterest = 20;
     }
+
+    // todo use @Override for all or not for all.
     public int getRateOfInterest() {
         return rateOfInterest;
     }

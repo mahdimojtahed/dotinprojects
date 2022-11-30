@@ -1,5 +1,5 @@
 package Handlers;
-
+// todo use small letters for package names.
 import src.Deposit;
 import utils.Calculator;
 import utils.Strings;
@@ -14,6 +14,7 @@ public class XMLOptionHandler {
     static double res;
     static String FILEPATH;
     public static void XMLEnterHandler() throws Exception, FileNotFoundException{
+        // todo pay attention to warnings and IntelliJ suggestions for clean code. delete unnecessary codes. [ Alt + Ctrl + l ] and [ Alt + Ctrl + o ]
         System.out.println(Strings.ENTER_PATH);
         System.out.println(Strings.FILE_FORMAT);
         FILEPATH = "files/" + input.nextLine();
@@ -25,6 +26,7 @@ public class XMLOptionHandler {
                     deposit.getDepositBalance(),
                     deposit.getDurationInDays());
             System.out.println(deposit.getCustomerNumber() + " # " + res);
+            // todo sorted descending by res
         }
     }
 }
