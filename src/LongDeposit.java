@@ -1,14 +1,18 @@
 package src;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 public class LongDeposit extends Deposit{
-    private final int rateOfInterest;
-    public LongDeposit(int depositID, int customerNumber, String depositType, double depositBalance, int durationInDays) {
+    private final BigDecimal rateOfInterest;
+
+    public LongDeposit(int depositID, int customerNumber, String depositType, BigDecimal depositBalance, BigInteger durationInDays) {
         super(depositID, customerNumber, depositType, depositBalance, durationInDays);
-        this.rateOfInterest = 20;
+        this.rateOfInterest = BigDecimal.valueOf(20);
     }
 
-    // todo use @Override for all or not for all.
-    public int getRateOfInterest() {
+    @Override
+    public BigDecimal getRateOfInterest() {
         return rateOfInterest;
     }
 }

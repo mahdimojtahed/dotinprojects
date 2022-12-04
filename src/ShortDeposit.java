@@ -1,14 +1,18 @@
 package src;
 
-public class ShortDeposit extends Deposit{
-    private final int rateOfInterest;
-    public ShortDeposit(int depositID, int customerNumber, String depositType, double depositBalance, int durationInDays) {
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+public class ShortDeposit extends Deposit {
+    private final BigDecimal rateOfInterest;
+
+    public ShortDeposit(int depositID, int customerNumber, String depositType, BigDecimal depositBalance, BigInteger durationInDays) {
         super(depositID, customerNumber, depositType, depositBalance, durationInDays);
-        this.rateOfInterest = 10;
+        this.rateOfInterest = BigDecimal.valueOf(20);
     }
 
     @Override
-    public int getRateOfInterest() {
+    public BigDecimal getRateOfInterest() {
         return rateOfInterest;
     }
 }
